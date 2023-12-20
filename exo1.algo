@@ -1,0 +1,21 @@
+ALGORITHM sentence
+VAR
+    phrase: string[50];
+    i, l, cpt: integer;
+    caract: char;
+BEGIN
+    write('entrez la phrase');
+    read(phrase);
+    l := length(phrase);
+    write('la longueur de la phrase est:', l);
+    cpt := 0;
+    for i from 1 to l do 
+        caract := copy(phrase, i, 1);
+        IF (caract = 'a') or (caract = 'e') or (caract = 'i') or (caract = 'o') or (caract = 'y') or (caract = 'u') THEN
+            cpt := cpt + 1;
+        END_IF;
+        IF (caract = '.') THEN
+            BREAK;
+        END_IF;
+    end_for;
+END
